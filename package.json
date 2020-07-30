@@ -1,0 +1,21 @@
+{
+  "name": "@ycmfe/vue-cli-plugin-cactus-base",
+  "version": "1.0.0",
+  "description": "![Version](https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycmfe/vue-cli-plugin-cactus-base.git"
+  },
+  "author": "chord",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ycmfe/vue-cli-plugin-cactus-base/issues"
+  },
+  "homepage": "https://github.com/ycmfe/vue-cli-plugin-cactus-base#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
+}
