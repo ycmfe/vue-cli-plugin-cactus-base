@@ -12,10 +12,8 @@ module.exports = (api) => {
     },
   })
 
-  const dir = process.cwd().split(path.sep)
-  const appName = dir[dir.length - 1]
   api.render('./template', {
-    name: appName,
+    name: api.rootOptions.projectName,
   })
 
   api.extendPackage({
