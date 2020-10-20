@@ -11,8 +11,14 @@ module.exports = (api) => {
     // cdn config
     // https://www.npmjs.com/package/webpack-cdn-plugin
     if (fs.existsSync(path.join(process.cwd(), 'cdn.config.js'))) {
-      const CDNConfig = require(path.join(process.cwd(), 'cdn.config.js'))
-      config.plugin('CDNPlugin').use(new WebpackCDNPlugin(CDNConfig))
+      const modules = require(path.join(process.cwd(), 'cdn.config.js'))()
+      config.plugin('CDNPlugin').use(
+        new WebpackCDNPlugin({
+          prodUrl: ':path',
+          crossOrigin: 'anonymous',
+          modules,
+        })
+      )
     }
   })
 }
