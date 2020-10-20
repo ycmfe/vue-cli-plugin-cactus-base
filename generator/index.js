@@ -12,8 +12,10 @@ module.exports = (api) => {
     },
   })
 
+  const dir = process.cwd().split(path.sep)
+  const appName = dir[dir.length - 1]
   api.render('./template', {
-    name: require(path.join(process.cwd(), 'package.json')).name,
+    name: appName,
   })
 
   api.extendPackage({
