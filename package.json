@@ -1,6 +1,6 @@
 {
   "name": "@ycmfe/vue-cli-plugin-cactus-base",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "![Version](https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)",
   "repository": {
     "type": "git",
