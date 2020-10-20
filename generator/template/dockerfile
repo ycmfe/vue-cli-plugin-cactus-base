@@ -1,0 +1,4 @@
+FROM nginx
+COPY ./dist /usr/share/nginx/html/<%= name %>
+WORKDIR /etc/nginx
+EXPOSE 80

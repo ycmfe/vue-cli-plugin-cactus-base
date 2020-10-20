@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = (api) => {
   // 请求库 https://test.yangcong345.com/onion-utils-docs/global.html#axiosInterceptors
   api.injectImports(api.entryFile, [`import '@/axios.config'`])
@@ -10,13 +12,16 @@ module.exports = (api) => {
     },
   })
 
-  api.render('./template')
+  api.render('./template', {
+    name: require(path.join(process.cwd(), 'package.json')).name,
+  })
 
   api.extendPackage({
     scripts: {
       serve: 'cactus serve',
       build: 'cactus build',
       lint: 'cactus lint',
+      deploy: 'sh docker.sh',
     },
   })
 }
