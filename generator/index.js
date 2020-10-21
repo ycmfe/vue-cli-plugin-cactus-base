@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = (api) => {
   // 请求库 https://test.yangcong345.com/onion-utils-docs/global.html#axiosInterceptors
   api.injectImports(api.entryFile, [`import '@/axios.config'`])
@@ -10,6 +8,9 @@ module.exports = (api) => {
       axios: '0.19.2',
       '@guanghe-pub/onion-utils': '^1.4.0',
     },
+    devDependencies: {
+      'cross-env': 'latest',
+    },
   })
 
   api.render('./template', {
@@ -19,7 +20,10 @@ module.exports = (api) => {
   api.extendPackage({
     scripts: {
       serve: 'cactus serve',
-      build: 'cactus build',
+      build: 'cross-env VUE_APP_ENV=production cactus build',
+      'build:prod': 'cross-env VUE_APP_ENV=production cactus build',
+      'build:stage': 'cross-env VUE_APP_ENV=stage cactus build',
+      'build:dev': 'cross-env VUE_APP_ENV=development cactus build',
       lint: 'cactus lint',
       deploy: 'sh docker.sh',
     },
