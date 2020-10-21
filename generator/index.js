@@ -7,8 +7,6 @@ module.exports = (api) => {
       // CDN http://10.8.8.253:8015/
       axios: '0.19.2',
       '@guanghe-pub/onion-utils': '^1.4.0',
-    },
-    devDependencies: {
       'cross-env': 'latest',
     },
   })

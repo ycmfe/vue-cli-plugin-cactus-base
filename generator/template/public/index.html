@@ -13,17 +13,17 @@
     <meta name="theme-color" content="#db5945" />
     <link rel="icon" href="<%%= BASE_URL %%>favicon.ico" />
     <title>洋葱学院</title>
-    <!-- sentry & ARMS -->
-    <% if (process.env.VUE_APP_ENV !== 'production' && process.env.VUE_APP_SENTRY_DSN) { %>
+    <%% if (process.env.NODE_ENV === 'production' && process.env.VUE_APP_ENV !== 'production' &&
+    process.env.VUE_APP_SENTRY_DSN) { %%>
     <script src="https://cdn.ravenjs.com/3.26.2/raven.min.js" crossorigin="anonymous"></script>
     <script>
-      Raven.config('<%= process.env.VUE_APP_SENTRY_DSN %>').install()
+      Raven.config('<%%= process.env.VUE_APP_SENTRY_DSN %%>').install()
     </script>
-    <% } else if (process.env.VUE_APP_ARMS_PID) { %>
+    <%% } else if (process.env.NODE_ENV === 'production' && process.env.VUE_APP_ARMS_PID) { %%>
     <script>
       window.__bl = {
         config: {
-          pid: '<%= process.env.VUE_APP_ARMS_PID %>',
+          pid: '<%%= process.env.VUE_APP_ARMS_PID %%>',
           appType: 'web',
           imgUrl: 'https://arms-retcode.aliyuncs.com/r.png?',
           sendResource: true,
@@ -40,7 +40,7 @@
       src="https://retcode.alicdn.com/retcode/bl.js"
       crossorigin="anonymous"
     ></script>
-    <% } %>
+    <%% } %%>
   </head>
   <body>
     <noscript>
