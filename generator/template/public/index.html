@@ -12,10 +12,10 @@
     <meta name="format-detection" content="email=no" />
     <meta name="theme-color" content="#db5945" />
     <link rel="icon" href="<%%= BASE_URL %%>favicon.ico" />
-    <title>洋葱学院</title>
+    <title>洋葱学园</title>
     <%% if (process.env.NODE_ENV === 'production' && process.env.VUE_APP_ENV !== 'production' &&
     process.env.VUE_APP_SENTRY_DSN) { %%>
-    <script src="https://cdn.ravenjs.com/3.26.2/raven.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.ravenjs.com/3.26.2/vue/raven.min.js" crossorigin="anonymous"></script>
     <script>
       Raven.config('<%%= process.env.VUE_APP_SENTRY_DSN %%>').install()
     </script>
